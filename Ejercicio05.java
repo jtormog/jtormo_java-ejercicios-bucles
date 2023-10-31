@@ -3,11 +3,14 @@ import java.util.Scanner;
 public class Ejercicio05 {
 
     public static void main(String[] args){
-        int resultado = 0;
         int num = CastNum();
-        for (int i = 1; i <= num; i++){
-            System.out.print(i+" * ");
-            resultado = num * i ;
+        int resultado = 1;
+        System.out.print(num+"! = ");
+        for (int i = num; i >= 1; i--){
+            System.out.print(i);
+            if (i > 1) System.out.print("*");
+            else System.out.print(" = ");
+            resultado = resultado * i;
         }
         System.out.println(resultado);
 
