@@ -5,23 +5,18 @@ public class Ejercicio16 {
 
         System.out.print("Dime un número: ");
         int num = CastNum();
-
-        switch (num) {
-            case 2:
-            case 3:
-            case 5:
-            case 7:
-                System.out.println("Es primo.");
-                break;
-            default:
-                if (num % 2 == 0 | num % 3 == 0 | num % 5 == 0 | num % 7 == 0) System.out.println("No es primo.");
-                else System.out.println("Es primo.");
-                break;
-        }
-
+        if (EsPrimo(num) && num !=1|| num == 2) System.out.println("Es primo.");
+        else System.out.println("No es primo.");
 
     }
-
+    static boolean EsPrimo(int num) {
+        if (num % 2 == 0) return false;
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0)
+                return false;
+        }
+        return true;
+    }
     static int CastNum() {
         Scanner scanner = new Scanner(System.in);
         int num = 0;
@@ -39,3 +34,4 @@ public class Ejercicio16 {
         return num;
     }
 }
+
