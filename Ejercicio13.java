@@ -5,32 +5,32 @@ public class Ejercicio13 {
         boolean igual = false;
         int minimo = 1;
         int maximo =100;
-        int numeroRandom = (int) (Math.random()*maximo+minimo);
+        int numeroRandom = (int) (Math.random()*(minimo-maximo+1)+maximo);
 
-
+        Scanner scanner = new Scanner(System.in);
         while (!igual){
 
             System.out.print("\nHe pensado en :"+ numeroRandom+"\n");
             System.out.println("Indica \">\" si es mayor, \"<\" si es menor o \"=\" si es igual");
-            Scanner scanner = new Scanner(System.in);
             String opcion = scanner.nextLine();
-
             switch (opcion){
                 case "<":
-                    System.out.println(maximo);
                     maximo = numeroRandom;
-                    System.out.println(maximo);
+                    numeroRandom = (int) (Math.random()*(minimo-maximo+1)+maximo);
                     break;
                 case ">":
-                    System.out.println(minimo);
                     minimo = numeroRandom;
-                    System.out.println(minimo);
+                    numeroRandom = (int) (Math.random()*(minimo-maximo+1)+maximo);
                     break;
                 case "=":
+                    System.out.println("Gracias por jugar");
                     igual = true;
                     break;
+                default:
+                    System.out.println("No has introducido una instrucción valida");
+                    break;
             }
-            numeroRandom = (int) (Math.random()*maximo+minimo);
+
         }
 
 
